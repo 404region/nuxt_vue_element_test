@@ -13,13 +13,15 @@
             <button type="primary" plain>Авторизация</button>
         </form>
     </div>
-    
-    
 </template>
 <script>
     export default {
         data() {
             return {
+                element: {
+                    email: '',
+                    password: ''
+                },
                 login: {
                     email: '',
                     password: ''
@@ -32,5 +34,4 @@
             }
         }
     }
-    
 </script>
