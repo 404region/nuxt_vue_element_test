@@ -4,13 +4,13 @@
         <form @submit="userLogin">
             <div>
                 <label>Электронная почта</label>
-                <input type="email" v-model="login.mail">
+                <input type="email" v-model="login.email" required>
             </div>
             <div>
                 <label>Пароль</label>
-                <input type="password" v-model="login.password" minlength="8">
+                <input type="password" v-model="login.password" minlength="8" required>
             </div>
-            <el-button type="primary" plain>Авторизация</el-button>
+            <button type="primary" plain>Авторизация</button>
         </form>
     </div>
     
@@ -21,7 +21,7 @@
         data() {
             return {
                 login: {
-                    mail: '',
+                    email: '',
                     password: ''
                 }
             }
