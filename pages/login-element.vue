@@ -4,6 +4,12 @@
             <el-header>Авторизация</el-header>
             <el-main>
                 <el-form :model="form" label-width="200px">
+                <el-container v-if="this.errors.length > 0">
+                    <el-alert v-for="error in this.errors" :key="error" :closable="false"
+                        title=""
+                        type="error">{{error}}
+                    </el-alert>
+                </el-container>
                     <el-form-item label="Электронная почта">
                         <el-input v-model="form.email" placeholder="Электронная почта" />
                     </el-form-item>
@@ -42,6 +48,14 @@
                     this.errors.push('Введите пароль');
                 }
 
+                if (this.form.password.length < 8) {
+                    this.errors.push('Пароль не может быть меньше 8 символов');
+                }
+
+                if (!this.strWithCapital(this.form.password)) {
+                    this.errors.push('Пароль должен содержать хотя бы одну заглавную букву');
+                }
+
                 if (!this.form.email) {
                     this.errors.push('Укажите электронную почту.');
                 } else if (!this.validEmail(this.form.email)) {
@@ -50,12 +64,16 @@
                 console.log(this.errors);
 
                 if (!this.errors.length) {
+                    console.log('Форма валидна');
                     return true;
                 }
             },
             validEmail: function (email) {
                 var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(email);
+            },
+            strWithCapital: function(str){
+                return /[A-Z]/.test(str)
             }
         }
     }
