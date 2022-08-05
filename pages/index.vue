@@ -1,8 +1,13 @@
 <template>
-  <NavVue/>
+  <div>
+    <NavVue/>
+    <DataTable/>
+  </div>
 </template>
 <script>
+import DataTable from '../components/DataTable.vue';
   export default {
-    name: 'IndexPage'
-  }
+    name: "IndexPage",
+    components: { DataTable }
+}
 </script>
