@@ -1,6 +1,6 @@
 <template>
     <div class="common-layout">
-        <el-container class="layout-container-demo">
+        <el-container class="layout-container-demo" v-loading="loading">
             <el-header>Авторизация</el-header>
             <el-main>
                 <el-form :model="form" label-width="200px">
@@ -37,12 +37,12 @@
                     password: ''
                 },
                 errors: [],
+                loading: false,
             }
         },
         methods: {
             checkForm(e) {
                 this.errors = [];
-                console.log('submit!');
 
                 if (!this.form.password) {
                     this.errors.push('Введите пароль');
@@ -61,10 +61,15 @@
                 } else if (!this.validEmail(this.form.email)) {
                     this.errors.push('Укажите корректный адрес электронной почты.');
                 }
-                console.log(this.errors);
 
                 if (!this.errors.length) {
-                    console.log('Форма валидна');
+                    this.loading = true;
+
+                    setTimeout(() => {
+                        //Разблокировать форму
+                        //Перенаправить на главную страницу
+                        this.loading = false;
+                    }, 2000);
                     return true;
                 }
             },
