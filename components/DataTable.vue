@@ -1,5 +1,6 @@
 <template>
     <div>
+        <h1>Пользователи</h1>
         <el-table :data="pagedTableData" style="width: 100%" v-loading="usersLoading">
             <el-table-column prop="id" label="Id" width="180"></el-table-column>
             <el-table-column prop="name" label="Имя" width="180"></el-table-column>
@@ -20,6 +21,7 @@
 
 <script>
     import axios from 'axios';
+    import moment from 'moment';
 
     export default {
         created() {
@@ -63,7 +65,7 @@
                                 id: item.id,
                                 role: item.role,
                                 name: item.name,
-                                ctime: item.ctime,
+                                ctime: moment(item.ctime).format('DD.MM.YYYY HH:mm'),
                             });
                         };
                         this.usersLoading = false;
