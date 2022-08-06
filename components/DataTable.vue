@@ -5,7 +5,13 @@
             <el-table-column prop="name" label="Имя" width="180"></el-table-column>
             <el-table-column prop="role" label="Роль"></el-table-column>
             <el-table-column prop="ctime" label="Дата создания"></el-table-column>
-            <el-table-column prop="ctime" label="Действие"></el-table-column>
+             <el-table-column
+                label="Действие"
+                width="80">
+                <template slot-scope="scope">
+                    <el-button type="danger" icon="el-icon-delete"  @click="deleteUser(scope.$index, scope.row)"  circle></el-button>
+                </template>
+            </el-table-column>
         </el-table>
         <el-pagination layout="prev, pager, next" :total="this.tableData.length" @current-change="setPage">
         </el-pagination>
@@ -69,6 +75,10 @@
                     //this.usersLoading = false;
                 }
             },
+            deleteUser(index, row) {
+                this.pagedTableData.splice(index, 1);
+            }
+
         },
         mounted() {
             
