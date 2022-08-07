@@ -7862,6 +7862,13 @@ vue-meta@^2.4.0:
   dependencies:
     deepmerge "^4.2.2"
 
+vue-money-format@^1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/vue-money-format/-/vue-money-format-1.2.4.tgz#636d453c7e8bf81547dde4cbe67ecb379397ad52"
+  integrity sha512-Y0/MmUc40JbPtjPh0R+8F7PihNEMeBsJDaU7y4jiYoLDzPXgk2kydeG+iKfHEKdnUvD8tbJQhBEl5J8o2AH7Ow==
+  dependencies:
+    vue "^2.6.11"
+
 vue-native-websocket@^2.0.15:
   version "2.0.15"
   resolved "https://registry.yarnpkg.com/vue-native-websocket/-/vue-native-websocket-2.0.15.tgz#e94af2bb7f54beeaac5281d953751d2858b76964"
@@ -7912,7 +7919,7 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue@^2.6.12, vue@^2.6.14:
+vue@^2.6.11, vue@^2.6.12, vue@^2.6.14:
   version "2.7.8"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.7.8.tgz#34e06553137611d8cecc4b0cd78b7a59f80b1299"
   integrity sha512-ncwlZx5qOcn754bCu5/tS/IWPhXHopfit79cx+uIlLMyt3vCMGcXai5yCG5y+I6cDmEj4ukRYyZail9FTQh7lQ==
