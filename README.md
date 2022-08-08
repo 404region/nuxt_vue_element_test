@@ -8,4 +8,5 @@
 ![IMAGE 2022-08-08 20:37:48](https://user-images.githubusercontent.com/5164895/183479342-d9347b7a-cd54-49f8-a3ef-98a662945099.jpg)
 
 3) страница “Магазин”. Статично сверстан блок продукта
+
 ![IMAGE 2022-08-08 20:38:00](https://user-images.githubusercontent.com/5164895/183479375-6a845a5f-6853-4354-b763-5461c7cef753.jpg)
